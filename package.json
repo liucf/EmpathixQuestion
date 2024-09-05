@@ -1,0 +1,19 @@
+{
+    "name": "serverless-crud-app",
+    "version": "1.0.0",
+    "description": "Serverless CRUD application using AWS Lambda, API Gateway, and DynamoDB",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "tsc",
+        "deploy": "npm run build && aws lambda update-function-code --function-name YourLambdaFunctionName --zip-file fileb://dist/index.zip"
+    },
+    "dependencies": {
+        "@aws-sdk/client-dynamodb": "^3.332.0",
+        "@aws-sdk/util-dynamodb": "^3.332.0"
+    },
+    "devDependencies": {
+        "@types/aws-lambda": "^8.10.115",
+        "@types/node": "^20.2.5",
+        "typescript": "^5.0.4"
+    }
+}
